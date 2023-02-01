@@ -60,13 +60,13 @@ export const store = maurox();
     }
   }
 ```
-03. Importar el store y el reducer al archivo app (donde se definen las rutas) de nuestro proyecto react
+03. Importar el store al archivo app (donde se definen las rutas) de nuestro proyecto react
+IMPORTANTE: debe encontrarse antes y por fuera de nuestro componente app
 ```
-
 ```
 
 ```js
-import { store, reducer } from './Maurox/index.js'
+import { store } from './Maurox/index.js'
 // crear Estado inicial
   const initialState = {
     pelis: [],
@@ -77,9 +77,11 @@ import { store, reducer } from './Maurox/index.js'
     },
   };
 // Y llamar desde nuestro store a nuestro reducer por primera vez
-store.reducer(root_reducer())
+store.initialState(initialState)
 // Para checkear el correcto funcionamiento podemos ver nuestro state inicial con:
 console.log("init getState --> ",store.getState());
+
+function App() { etc... }
 ```
 
 ```
