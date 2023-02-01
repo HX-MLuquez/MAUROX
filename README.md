@@ -105,3 +105,26 @@ import { store } from './Maurox/index.js'
   store.dispatch("ADD_PELI", add_peli(peli2));
   console.log(store.getState());
 ```
+
+## Modo de implementar con React
+```
+Es una pequeñita librería que simula el modelo de Redux
+
+En tan solo 4 pasos ya se encuentra conectada y se puede utilizar desde
+cualquier componente de nuestra app
+
+Ahora para el manejo del renderizado, es decir de que react escuche los cambios
+lo que se debe hacer es crear en el componente que se encuentra conectado a nuestro
+store, que uno de sus states locales se encuentre enlazado a determinada props
+de nuestro state global de nuestro store
+
+Ejemplo:
+
+const [ user, setUser ] = useState("")
+const userStateGlobal = store.getState().user
+
+useEffect(()=>{
+    setUser(userStateGlobal)
+},[ userStateGlobal ])
+
+```
