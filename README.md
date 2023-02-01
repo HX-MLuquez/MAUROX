@@ -5,7 +5,7 @@ Es una pequeñita librería que simula el modelo de Redux
 ## La librería es:
 
 ```js
-function store_structure(state = {}) {
+function maurox(state = {}) {
   return {
     initialState: function (initState) {
       state = { ...initState };
@@ -33,7 +33,7 @@ function store_structure(state = {}) {
 ```
 
 ```js
-import Maurox from 'maurox'
+import maurox from 'maurox'
 // y crear la instancia de este exportando
 export const store = maurox();
 ```
