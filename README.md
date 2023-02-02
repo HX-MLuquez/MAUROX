@@ -197,3 +197,11 @@ lo que se debe hacer es usar los recursos de React en sí, tales como:
 - useEffect
 
 En sus diferentes momentos del ciclo de vida de react
+
+
+### Testear su implementación
+Para ello creé una app pequeña ustilizando React + maurox-store
+y la pueden encontrar y probar aquí:
+```
+https://github.com/HX-MLuquez/app-demo-storeByMaurox
+```
