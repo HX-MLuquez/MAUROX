@@ -83,7 +83,7 @@ IMPORTANTE: debe encontrarse antes y por fuera de nuestro componente app
 ```
 
 ```js
-import { store, root_reducer } from './Maurox/index.js'
+import { store, root_reducer } from './store/index.js'
 // crear Estado inicial
   const initialState = {
     pelis: [],
