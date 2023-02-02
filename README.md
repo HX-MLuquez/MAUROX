@@ -34,9 +34,11 @@ module.exports = maurox
 ```
 01. Crear carpeta store y dentro archivo index.js, allí importar maurox
 ```
-
+```
+npm i maurox-store
+```
 ```js
-const maurox = require("../index");
+const maurox = require("maurox-store");
 // y crear la instancia de este exportando
 export const store = maurox();
 // consologear a modo de testear su conexión
@@ -113,8 +115,19 @@ import { store } from './store/index.js'
   function add_peli(peli) {
     return peli;
   }
-  
-  // Despachando acciones
+```
+
+Despachando acciones
+
+```
+Este modelo de despachar acciones a nuestro reducer y con ello en nuestro store
+es un método que recibe dos parámetros, el primero es 
+               el type y luego la función
+ store.dispatch( "TYPE", functionAction() )
+```
+
+```js
+  // 
   store.dispatch("ADD_PELI", add_peli(peli1));
   console.log(store.getState());
   

@@ -1,8 +1,12 @@
 {
-  "name": "maurox",
+  "name": "maurox-store",
   "version": "1.0.0",
   "description": "library that manages a global state for our components in React",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HX-MLuquez/MAUROX.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
