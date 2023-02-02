@@ -1,6 +1,6 @@
 {
   "name": "maurox-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "library that manages a global state for our components in React",
   "main": "index.js",
   "repository": {
