@@ -134,8 +134,56 @@ es un método que recibe dos parámetros, el primero es
   store.dispatch("ADD_PELI", add_peli(peli2));
   console.log(store.getState());
 ```
+## RE-RENDERIZAR con React un component
 
-## Modo de implementar con React
+## Modo 1 (en un mismo componente)
+```js
+const [renderAction, setRenderAction] = useState(true);
+
+function handleClick(e) {
+  e.preventDefault();
+  store.dispatch(FILTER, filterCards(value));
+  setRenderAction(!renderAction); // <--> se estaría encargando que luego de la acción se renderice este componente
+}
+```
+## Modo 2 (de un componente a otro)
+```
+archivo padre <Favorites />
+```
+```js
+const [renderAction, setRenderAction] = useState(true);
+
+function renderActionExport(){
+    setRenderAction(!renderAction)
+  }
+
+return (
+    <>
+      <Card
+        setRenderAction={renderActionExport}
+        key={c.id}
+        name={c.name} 
+      />
+    </>
+  );
+```
+```
+archivo hijo <Card />
+```
+```js
+export default function Card(props) {
+
+  function handleFavorite(ch) {
+      store.dispatch(DELETE_FAVORITES, deleteFavorites(ch.id));
+      props.setRenderAction()
+    }
+    // etc...
+  return (
+    <>etc...</>
+  )
+}
+```
+
 ```
 Es una pequeñita librería que simula el modelo de Redux
 
@@ -143,17 +191,9 @@ En tan solo 4 pasos ya se encuentra conectada y se puede utilizar desde
 cualquier componente de nuestra app
 
 Ahora para el manejo del renderizado, es decir de que react escuche los cambios
-lo que se debe hacer es crear en el componente que se encuentra conectado a nuestro
-store, que uno de sus states locales se encuentre enlazado a determinada props
-de nuestro state global de nuestro store
-
-Ejemplo:
-
-const [ user, setUser ] = useState("")
-const userStateGlobal = store.getState().user
-
-useEffect(()=>{
-    setUser(userStateGlobal)
-},[ userStateGlobal ])
-
+lo que se debe hacer es usar los recursos de React en sí, tales como: 
 ```
+- state setState
+- useEffect
+
+En sus diferentes momentos del ciclo de vida de react

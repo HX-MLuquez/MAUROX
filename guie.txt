@@ -1,18 +1,17 @@
-Es una pequeñita librería que simula el modelo de Redux
+*** LEER DOCUMENTACIÓN del README ***
+
+
+Les comparto una pequeñita librería que simula el modelo de Redux
 
 En tan solo 4 pasos ya se encuentra conectada y se puede utilizar desde
 cualquier componente de nuestra app
 
 Ahora para el manejo del renderizado, es decir de que react escuche los cambios
-lo que se debe hacer es crear en el componente que se encuentra conectado a nuestro
-store, que uno de sus states locales se encuentre enlazado a determinada props
-de nuestro state global de nuestro store
+lo que se debe hacer es usar los recursos de React en sí, tales como: 
 
-Ejemplo:
+- state setState
+- useEffect
 
-const [ user, setUser ] = useState("")
-const userStateGlobal = store.getState().user
+En sus diferentes momentos del ciclo de vida de react
 
-useEffect(()=>{
-    setUser(userStateGlobal)
-},[ userStateGlobal ])
+Listo!!!
